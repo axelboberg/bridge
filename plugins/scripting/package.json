@@ -1,0 +1,36 @@
+{
+  "name": "bridge-plugin-scripting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "bridge": "^0.0.1"
+  },
+  "keywords": [
+    "bridge",
+    "plugin"
+  ],
+  "author": "Axel Boberg (axel.boberg@svt.se)",
+  "license": "UNLICENSED",
+  "contributes": {
+    "types": [
+      {
+        "id": "bridge.scripting.script",
+        "name": "Script",
+        "inherits": "bridge.types.delayable",
+        "properties": {
+          "scripting.code": {
+            "name": "Code",
+            "type": "string",
+            "default": "// Code here",
+            "allowsVariables": false,
+            "ui.group": "Scripting"
+          }
+        }
+      }
+    ]
+  }
+}
