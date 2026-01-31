@@ -25,9 +25,12 @@ export function AppMenu () {
   const [menu, setMenu] = React.useState()
 
   React.useEffect(() => {
+    console.log('Going to get menu')
     async function getMenu () {
       const bridge = await api.load()
+      console.log('Did load api')
       const menu = await bridge.commands.executeCommand('window.getAppMenu')
+      console.log('Got menu', menu)
       recursivePopulateCommandsInPlace(menu)
       setMenu(menu)
     }
