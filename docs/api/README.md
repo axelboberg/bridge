@@ -21,6 +21,7 @@ Bridge provides a JavaScript api for use in plugins and their widgets.
 - [Messages](#messages)
 - [UI](#ui)
   - [Context menus](#context-menus)
+- [Time](#time)
 
 ## Getting started  
 The api is available for plugins and widgets running in either the main process or browser processes of Bridge and can be included as follows. The module will be provided by Bridge at runtime.
@@ -668,4 +669,15 @@ Close any opened context menus, this does not need to be called as a response to
 ```javascript
 import bridge from 'bridge'
 bridge.ui.contextMenu.close()
+```
+
+## Time  
+
+### `bridge.time.now(): Promise.<number>`
+Get the current server time, consider this a replacement for Date.now().
+This function compensates for roundtrip latency and local clock drift.
+
+```javascript
+import bridge from 'bridge'
+const now = await bridge.time.now()
 ```
