@@ -634,9 +634,15 @@ const spec = [
 
 window.addEventListener('contextmenu', e => {
   bridge.ui.contextMenu.open(spec, {
-    x: e.screenX, // Required
-    y: e.screenY, // Required
-    searchable: true // Optional, defaults to false, whether or not to show a search field and allow the user to search for any items in the menu
+    searchable: true // Optional, defaults to false, whether or not to show a search field and allow the user to search for any items in the menu,
+
+    // Coordinates must be required either by
+    // 1. Auto populating coordinates (recommended)
+    ...bridge.ui.contextMenu.getPositionFromEvent(e),
+
+    // 2. Manually defining coordinates
+    y: 10, 
+    x: 10
   })
 })
 ```

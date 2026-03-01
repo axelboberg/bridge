@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0-beta.11 [UNRELEASED]
+### Fixed
+- An issue where context menues wouldn't be properly placed when running in a web browser
+
 ## 1.0.0-beta.10
 ### Added
 - Human/AI readable descriptors for types
