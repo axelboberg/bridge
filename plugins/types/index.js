@@ -37,7 +37,9 @@ const PLAY_HANDLERS = [
           ;(function () {
             const children = item?.children || []
             const index = Math.round(Math.random() * (children.length - 1))
-            bridge.items.playItem(children[index])
+            if (children[index]) {
+              bridge.items.playItem(children[index])
+            }
           })()
           break
         case GROUP_PLAY_MODES.all:
