@@ -65,9 +65,13 @@ async function setupServer (description) {
   }
 
   const server = new Caspar({
+    active: description?.active !== false,
     reconnect: true,
     compatibilityMode: description?.compatibilityMode
   })
+
+  server.mode = description.compatibilityMode ? Caspar.mode.COMPATIBILITY : Caspar.mode.DEFAULT
+  server.active = description.active !== false
 
   server.on('status', newStatus => {
     bridge.state.apply({
@@ -156,6 +160,7 @@ async function editServer (serverId, description) {
     })
 
   server.mode = description.compatibilityMode ? Caspar.mode.COMPATIBILITY : Caspar.mode.DEFAULT
+  server.active = description.active !== false
 
   bridge.state.apply({
     plugins: {
@@ -304,6 +309,15 @@ async function sendString (serverId, string) {
   if (!server) {
     return Promise.reject(new Error('Server not found'))
   }
+
+  /*
+  Skip sending the string if
+  the server is not active
+  */
+  if (!server.active) {
+    return
+  }
+
   return server.send(string)
 }
 exports.sendString = sendString

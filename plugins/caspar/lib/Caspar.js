@@ -218,6 +218,20 @@ class Caspar extends EventEmitter {
 
   /**
    * @private
+   * @type { boolean }
+   */
+  #active = true
+
+  get active () {
+    return this.#active
+  }
+
+  set active (newValue) {
+    this.#active = newValue
+  }
+
+  /**
+   * @private
    * @typedef {{
    *  resolve: Function.<void>,
    *  reject: Function.<void>,
