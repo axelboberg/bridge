@@ -1,17 +1,22 @@
 # Changelog
 
-## 1.0.3 [UNRELEASED]
+## 1.0.3
 ### Added
 - A browser widget for custom embeds
 - A monospace font (JetBrains Mono) is now bundled with the app
+- The ability to create triggers for an item from the context menu
+- The ability to limit compatibility with OSes for plugins
 ### Changed
 - Improved stability and UX of the agent plugin
 - Improved UX in the OSC log widget
 - Text in the OSC log widget can now be selected and copied
 - The palette is now an input field directly in the header
+- The timecode plugin will not show up on Windows
+- Updated dependencies
 ### Fixed
 - An issue where OSC play current main selection stopped working
 - The OSC log widget can now scroll to show the full last row
+- (Windows) The app menu would sometimes get cut off by the window's upper bounds
 
 ## 1.0.2
 ### Added
