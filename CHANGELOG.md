@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.4 – Unreleased
+### Added
+- The ability to duplicate tabs
+
 ## 1.0.3
 ### Added
 - A browser widget for custom embeds
