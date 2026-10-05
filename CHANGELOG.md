@@ -4,6 +4,8 @@
 ### Added
 - The ability to duplicate tabs
 - A switch to deactivate individual Caspar servers
+### Changed
+- Updated dependencies
 
 ## 1.0.3
 ### Added
