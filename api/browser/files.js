@@ -5,7 +5,7 @@
 const DIController = require('../../shared/DIController')
 const Files = require('../shared/files')
 
-class BrowserFiles extends Files {
+class ClientFiles extends Files {
   /**
    * Upload through the REST endpoint
    * @see Files#upload
@@ -27,6 +27,6 @@ class BrowserFiles extends Files {
   }
 }
 
-DIController.main.register('Files', BrowserFiles, [
+DIController.main.register('Files', ClientFiles, [
   'Commands'
 ])
