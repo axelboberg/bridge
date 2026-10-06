@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Sveriges Television AB
+// SPDX-FileCopyrightText: 2026 Axel Boberg
 //
 // SPDX-License-Identifier: MIT
 
@@ -88,7 +88,11 @@ class Files extends DIBase {
    * @returns {{ body: Blob | Uint8Array, type: String? }}
    */
   normalizeUpload (data, type) {
-    if (typeof Blob !== 'undefined' && data instanceof Blob) {
+    /*
+    Widgets run in iframes where instanceof Blob fails
+    for files created in another window
+    */
+    if (typeof data?.arrayBuffer === 'function' && typeof data?.type === 'string') {
       return { body: data, type: type || data.type || undefined }
     }
     if (typeof data === 'string') {

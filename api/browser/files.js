@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2026 Sveriges Television AB
+// SPDX-FileCopyrightText: 2026 Axel Boberg
 //
 // SPDX-License-Identifier: MIT
 
