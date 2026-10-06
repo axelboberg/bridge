@@ -7,6 +7,17 @@ const Files = require('../shared/files')
 const random = require('../random')
 
 class ClientFiles extends Files {
+  #basePath = `/api/v1/workspaces/${encodeURIComponent(window.APP.workspace)}/files`
+
+  /**
+   * Get the path to a file as served by the web server
+   * @param { String } id
+   * @returns { String }
+   */
+  getUrl (id) {
+    return `${this.#basePath}/${encodeURIComponent(id)}`
+  }
+
   /**
    * Upload through the REST endpoint
    *
@@ -31,7 +42,7 @@ class ClientFiles extends Files {
     await this.props.Events.on('file.upload.progress', onProgress)
 
     try {
-      const res = await fetch(`/api/v1/workspaces/${encodeURIComponent(window.APP.workspace)}/files`, {
+      const res = await fetch(this.#basePath, {
         method: 'POST',
         headers: {
           'Content-Type': _type || 'application/octet-stream',

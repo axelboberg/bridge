@@ -48,17 +48,6 @@ class Server {
   }
 
   /**
-   * Serve a file stored in the project file
-   * through the web server
-   * @param { String } id The id of a file, see bridge.files
-   * @returns { Promise.<String> } A path to the file as served by the web server
-   */
-  serveProjectFile (id) {
-    return this.#props.Commands.executeCommand('server.serveProjectFile', id)
-      .then(hash => `/api/v1/serve/${hash}`)
-  }
-
-  /**
    * Stop serving a file through
    * the web server by its id
    * @param { String } id
