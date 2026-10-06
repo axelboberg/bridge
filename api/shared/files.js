@@ -80,6 +80,14 @@ class Files extends DIBase {
   }
 
   /**
+   * Delete all files
+   * @returns { Promise.<Number> } The number of files deleted
+   */
+  clear () {
+    return this.props.Commands.executeCommand('files.clear')
+  }
+
+  /**
    * Normalize upload data to a Blob or Uint8Array
    * and resolve its mime type
    * @protected
