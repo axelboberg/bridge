@@ -22,6 +22,7 @@
   --base-color--shade4: rgba(255, 255, 255, 0.5);
 
   --base-color--shade-3pct: rgba(255, 255, 255, 0.03);
+  --base-color--shade-1pct: rgba(255, 255, 255, 0.01);
 
   --base-color--background1: #121212;
   --base-color--background2: #292a2c;
@@ -58,6 +59,7 @@
   --base-color--shade4: rgba(0, 0, 0, 0.5);
 
   --base-color--shade-3pct: rgba(0, 0, 0, 0.03);
+  --base-color--shade-1pct: rgba(0, 0, 0, 0.01);
 
   --base-color--background1: white;
   --base-color--background2: #f0f0f0;
